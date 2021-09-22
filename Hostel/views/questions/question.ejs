@@ -1,0 +1,84 @@
+<%- include ("../partial/header") %>
+<style>
+.jumbotron
+	{
+		background: linear-gradient(96.86deg, #047172 0%, #29596F 100.01%);
+		width: 1000px;
+	
+		
+	}
+	h1{
+		 font-family:Open Sans;
+		font-weight:Regular;
+	}
+
+	a
+	{
+	  padding:20px;	
+	}
+	h7
+	{
+		font-family:Open Sans;
+		font-weight:Medium;
+		font-size:25px;
+		color:whitesmoke;
+	}
+	h10
+	{
+		font-family:Open Sans;
+		font-weight:Semibold;
+		font-size:15px;
+		color:whitesmoke;
+	}
+</style>
+<div class="col-md-4">
+
+<div class="container">
+	<header class ="jumbotron">
+		<h7>
+			<%=questions.Author.name%><br>
+		</h7>	
+		<h10> posted on  <%=questions.Date_ques%> </h10>
+	
+		
+		
+<h1 style="color:White;" >
+	<%=questions.text%>
+</h1>
+
+		
+		<p>
+	<a class="btn btn-success" href="/topics/tech/<%=questions._id%>/comments">Answer</a>
+</p>
+		</header>
+<h3>
+   
+	<div style="float:right;text-align:right;margin-left: 80px;">Related Questions</div>
+	<ul>
+  <li>Question 1</li>
+  <li>Question 2</li>
+  <li>Question 3</li>
+</ul>
+	
+</h3>
+
+
+
+<div class="well">
+	
+	
+<% questions.comments.forEach(function(comment){%>
+	<div class="container">
+		
+	<span class="pull-right">10 days ago</span>
+<p> <strong>posted by <%=comment.author.name%></strong> - <%=comment.text%>
+								 
+</p>
+		</div>
+	
+<%})%>
+
+</div>
+</div>
+	</div>
+<%- include ("../partial/footer") %>

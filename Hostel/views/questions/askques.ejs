@@ -1,0 +1,28 @@
+<%- include ("../partial/header") %>
+
+<head>
+
+<link type="text/css" rel="stylesheet" href="wmd.css"/>
+<script type="text/javascript" src="showdown.js"></script>
+<script type="text/javascript" src="wmd.js"></script>
+
+</head>
+<div>
+	
+	<form action="/topics/tech" method="POST">
+
+	
+	<input type="text" name="text" placeholder="Type Your Question">
+	<button >
+		Submit
+	</button>
+</form>
+</div>
+<div id="example"></div>
+
+<link href="../css/froala_style.min.css" rel="stylesheet" type="text/css" />
+<div class="fr-view">
+  Here comes the HTML edited with the Froala rich text editor.
+</div>
+
+<%- include ("../partial/footer") %>

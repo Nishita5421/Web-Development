@@ -1,0 +1,50 @@
+<%- include ("../partial/header") %>
+<h1>
+	This is the tech page
+</h1>
+
+<style type="text/css">
+.questions
+	{
+		Width:879.01px;
+        Height:304.81px;
+		background-color: #06787A;
+	}
+	h4{
+	 font-family: Open Sans;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 41px;
+     line-height: 56px;
+	color: #FFFFFF;
+	}
+</style>
+
+	
+
+
+
+<% questions.forEach(function(questions){ %>
+<div class="questions">
+	<h4>
+		
+		
+		
+		
+		<form action="/topics/tech" method="GET">
+			
+			
+			<a href="/topics/tech/<%=questions._id%>" ><%=questions.text %></a>
+			<h7><%=questions.Author.name%><h10> posted on  <%=questions.Date_ques%> </h10>
+			</h7>
+				
+</form>
+	
+		
+	</h4>
+	
+</div>
+
+<% }); %>
+
+<%- include ("../partial/footer") %>

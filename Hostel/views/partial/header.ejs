@@ -1,0 +1,104 @@
+<html>
+
+<title>SHAREHUB</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+	#sharehub
+	{
+	 width:120px; /* you can use % */
+    height: auto;
+		float:left;
+		backface-visibility: hidden;
+		mix-blend-mode: hard-light;
+		
+	}
+	 .navbar-expand:hover, .navbar-expand:focus{
+		color:#ffffff !important;
+		 
+	}
+	.navbar{
+		align-items:start;
+	}
+	.navbar-text{
+		
+		
+		color:black;
+		margin-inline-start: auto;
+		padding-right:10px;
+		
+	}
+	.form-inline{
+		align-content:left;
+	}
+	
+	.nav-item{
+		display:inline;
+		align-self:center;
+		padding-right:20px;
+		text-decoration:none;
+		
+	}
+	.nav-link{
+		color:black;
+		text-decoration: none;
+		
+	}
+	.btn-info{
+		
+		margin-right:15px;
+		padding:3px;
+		
+	}
+	.navbar-expand .navbar-text .nav-link:focus, .navbar-expand .navbar-text .nav-link:hover {
+    color: #0080FF !important;
+		text-decoration:none;
+}
+	#Askquestion{
+		border-radius:5px;
+		text-decoration: none;
+		align-self:center;
+	
+	}
+	#link:hover{
+		text-decoration: none !important;
+	}
+	a:hover, a:focus { text-decoration: none;}
+</style>
+	
+<body>
+  <nav id ="navbar " class="navbar navbar-expand light bg-light pl-1 pt-1 pb-1">
+    
+	    <a   href="/"  ><img  src="">
+	  
+	  </a>
+		
+				
+		
+	
+		<form class="form-inline mx-auto mt-2"  action="/topics/tech" method="post">
+		<input class = "form-control mr-sm-2" name = "search" type="search" placeholder="Search" id="search" aria-label="Search">          
+		<button class="btn btn-outline-primary" type="submit">Search</button>
+		</form>
+		
+		
+		<span class="navbar-text  " >	
+			<ul class="navbar-nav ml-5 mr-1" >
+	
+			<%if(!currentUser){%>
+			<li class="nav-item"><a class="form-inline mt-2" href="/askques" ><button id="Askquestion" type="button" class="btn btn-primary  ">Ask a question</button></a></li>
+			<li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+			<li class="nav-item"><a  class="nav-link" href="/register">Sign Up</a></li>
+		
+			<%}else{%>
+			<li class="nav-item"><a class="nav-link" href="#">Signed In As <%=currentUser.name%></a></li>
+			<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+			<li class="nav-item" ><a id="link" style="text-decoration: none !important;"class="btn btn-primary" href="/askques">
+				Ask question</a></li>
+			<%}%>
+				</ul>
+			</span>
+		
+	</nav>
+	</body>
+</html>
+	  

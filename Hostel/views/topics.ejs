@@ -1,0 +1,32 @@
+<%- include ("partial/header") %>
+
+
+<div class="container">
+	
+
+<header class="jumbotron">
+<h1>
+	Welcome to thoughtzzz
+</h1>
+	<p>
+		Go though the topics
+	</p>
+</header>
+<div class="row text-centre" style="display:flex; flex-wrap: wrap;">
+	
+	
+<% topics.forEach(function(topics){ %>
+<div class="col-md-3 col-sm-6">
+	<div class="thumbnail">
+	<a href="/topics/tech"><img src="<%=topics.image %>"></a>	<div class="caption">
+		<h4>
+		<%=topics.name %>
+		</h4>
+		</div>
+	</div>
+	
+	
+</div>
+<% }); %>
+	</div>
+<%- include ("partial/footer") %>

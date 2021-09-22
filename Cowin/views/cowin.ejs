@@ -1,0 +1,48 @@
+<h1>Vaccine</h1>
+<p>Enter the pincode it will get saved and no need to enter everytime.</p>
+
+<label for="pincode">Pincode:</label>
+<input id= "pincode" name="pincode" type="text">
+<button onclick="myFunction()" id="save">Save</button>
+
+<script src="app.js"></script>
+
+<p id="submitpin">Pincode</p>
+<form action="http://localhost:8000" method="GET" >  
+<div id="savepin" name="savepin"></div> 
+</form>
+<h3>Result</h3>
+<% data.forEach(function(data){ %>
+<p>Name : <%=data.name%> </p>
+<p>Pincode : <%=data.pincode%></p>
+<p>Center ID : <%=data.center_id%></p>
+
+<p>Vacccine : <%= data.vaccine %></p>
+<p>Avaiable slots of dose1 : <%=data.available_capacity_dose1 %></p>
+<p>Available slots of dose2 :  <%=data.available_capacity_dose2 %> </p>
+<p>Minimum age :  <%=data.min_age_limit %></p>    
+<p>---------------------------------------------------------------------</p> 
+<% }); %>
+<div id="myData"></div>
+<script>
+   
+   document.getElementById("savepin").innerHTML = localStorage.getItem("pincodeS");
+   document.getElementById("pincode").value=localStorage.getItem("pincodeS")
+
+    function myFunction() {
+      
+      var pin=document.getElementById("pincode").value
+      if(pin == null || pin == "")
+      {
+          alert("Can't save empty field");
+      }
+      localStorage.setItem("pincodeS",pin);
+      document.getElementById("savepin").innerHTML = localStorage.getItem("pincodeS");
+
+   
+    }
+
+  
+           
+   
+    </script>
